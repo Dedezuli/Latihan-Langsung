@@ -1,0 +1,185 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-03-14T07:11:15.295Z",
+    "end": "2025-03-14T07:11:18.147Z",
+    "duration": 2852,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "b1bb490a-c275-4bca-8b82-a9ed0d8aad8f",
+      "title": "",
+      "fullFile": "cypress/e2e/API AUTOMATION/testSinar.cy.js",
+      "file": "cypress/e2e/API AUTOMATION/testSinar.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d15d65a3-6285-4cf4-91ba-b457482fb707",
+          "title": "Login and API Access",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Getting a resource",
+              "fullTitle": "Login and API Access Getting a resource",
+              "timedOut": null,
+              "duration": 455,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.api({\n  method: 'GET',\n  url: 'https://jsonplaceholder.typicode.com/posts',\n  failOnStatusCode: false\n}).then(response => {\n  expect(response.status).to.eq(200);\n  expect(response.body[0]).to.have.property('id');\n  expect(response.body[0]).to.have.property('title');\n  expect(response.body[0]).to.have.property('userId');\n});",
+              "err": {},
+              "uuid": "2862a40d-39b8-43aa-8475-7916b6e2a4bb",
+              "parentUUID": "d15d65a3-6285-4cf4-91ba-b457482fb707",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Post a resource",
+              "fullTitle": "Login and API Access Post a resource",
+              "timedOut": null,
+              "duration": 835,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.api({\n  method: 'POST',\n  url: 'https://jsonplaceholder.typicode.com/posts',\n  failOnStatusCode: false,\n  body: {\n    title: \"foo\",\n    body: \"bar\",\n    userId: 1\n  }\n}).then(response => {\n  expect(response.status).to.eq(201);\n  expect(response.body).to.have.property('id');\n  expect(response.body).to.have.property('title', 'foo');\n  expect(response.body).to.have.property('userId', 1);\n});",
+              "err": {},
+              "uuid": "2fbd0475-1e2a-44ba-940f-54b633247292",
+              "parentUUID": "d15d65a3-6285-4cf4-91ba-b457482fb707",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Update a resource",
+              "fullTitle": "Login and API Access Update a resource",
+              "timedOut": null,
+              "duration": 806,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.api({\n  method: 'PUT',\n  url: 'https://jsonplaceholder.typicode.com/posts/1',\n  failOnStatusCode: false,\n  body: {\n    title: \"foo\",\n    body: \"baruuu\",\n    userId: 1\n  }\n}).then(response => {\n  expect(response.status).to.eq(200);\n  expect(response.body).to.have.property('id', 1);\n  expect(response.body).to.have.property('title', 'foo');\n  expect(response.body).to.have.property('body', 'baruuu');\n  expect(response.body).to.have.property('userId', 1);\n});",
+              "err": {},
+              "uuid": "3fc92756-4ce5-4554-8b19-8ba6afa46c16",
+              "parentUUID": "d15d65a3-6285-4cf4-91ba-b457482fb707",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Delete a resource",
+              "fullTitle": "Login and API Access Delete a resource",
+              "timedOut": null,
+              "duration": 333,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.api({\n  method: 'DELETE',\n  url: 'https://jsonplaceholder.typicode.com/posts/2',\n  failOnStatusCode: false\n}).then(response => {\n  expect(response.status).to.eq(200);\n  expect(response.body).to.be.empty;\n});",
+              "err": {},
+              "uuid": "bf72f09b-5266-441b-8964-17af57ac88c1",
+              "parentUUID": "d15d65a3-6285-4cf4-91ba-b457482fb707",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "PATCH a resource",
+              "fullTitle": "Login and API Access PATCH a resource",
+              "timedOut": null,
+              "duration": 331,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.api({\n  method: 'PATCH',\n  url: 'https://jsonplaceholder.typicode.com/posts/1',\n  failOnStatusCode: false,\n  body: {\n    title: \"updated title\"\n  }\n}).then(response => {\n  expect(response.status).to.eq(200);\n  expect(response.body).to.have.property('id', 1);\n  expect(response.body).to.have.property('title', 'updated title');\n});",
+              "err": {},
+              "uuid": "ed63df22-9691-4f29-9138-7dcb604b05d9",
+              "parentUUID": "d15d65a3-6285-4cf4-91ba-b457482fb707",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "2862a40d-39b8-43aa-8475-7916b6e2a4bb",
+            "2fbd0475-1e2a-44ba-940f-54b633247292",
+            "3fc92756-4ce5-4554-8b19-8ba6afa46c16",
+            "bf72f09b-5266-441b-8964-17af57ac88c1",
+            "ed63df22-9691-4f29-9138-7dcb604b05d9"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2760,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportPageTitle": "Cypress Inline Reporter",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,166 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-03-14T07:11:20.059Z",
+    "end": "2025-03-14T07:11:28.139Z",
+    "duration": 8080,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "02a34d0a-9def-43fd-ba76-d2243eb6bdb5",
+      "title": "",
+      "fullFile": "cypress/e2e/WEB AUTOMATION/Login/login.cy.js",
+      "file": "cypress/e2e/WEB AUTOMATION/Login/login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ab55a49d-eacb-490c-b3d8-e8dfd3c85db9",
+          "title": "Login Sanity",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "C2242 -\tLogin with valid credential should be success",
+              "fullTitle": "Login Sanity C2242 -\tLogin with valid credential should be success",
+              "timedOut": null,
+              "duration": 3343,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(_login.default.usernameInput).clear().type(_user.default.email);\ncy.get(_login.default.passwordInput).clear().type(_user.default.password);\ncy.get(_login.default.loginBtn).click();\ncy.url().should('include', '/');",
+              "err": {},
+              "uuid": "ab0ae23f-da6b-4b77-819a-bc550db7b3fd",
+              "parentUUID": "ab55a49d-eacb-490c-b3d8-e8dfd3c85db9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "C2243 -\tLogin with an unregister email should be fail",
+              "fullTitle": "Login Sanity C2243 -\tLogin with an unregister email should be fail",
+              "timedOut": null,
+              "duration": 1518,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(_login.default.usernameInput).clear().type(_user.default.emailInvalid);\ncy.get(_login.default.passwordInput).clear().type(_user.default.password);\ncy.get(_login.default.loginBtn).click();\ncy.get('.text-small').should('contain', 'The email must be a valid email address.');\ncy.url().should('include', '/');",
+              "err": {},
+              "uuid": "cf94e02f-a762-4b34-81e2-ad8282f50713",
+              "parentUUID": "ab55a49d-eacb-490c-b3d8-e8dfd3c85db9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "C2244\t- Login with an incorrect password should be fail",
+              "fullTitle": "Login Sanity C2244\t- Login with an incorrect password should be fail",
+              "timedOut": null,
+              "duration": 1947,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(_login.default.usernameInput).clear().type(_user.default.email);\ncy.get(_login.default.passwordInput).clear().type(_user.default.email);\ncy.get(_login.default.loginBtn).click();\ncy.get('.text-small').should('contain', 'These credentials do not match our records.');\ncy.url().should('include', '/');",
+              "err": {},
+              "uuid": "a988ac2a-1514-4b8d-b2ab-2cc5312d1c09",
+              "parentUUID": "ab55a49d-eacb-490c-b3d8-e8dfd3c85db9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "CC2245 - Login without entering email & password should be fail",
+              "fullTitle": "Login Sanity CC2245 - Login without entering email & password should be fail",
+              "timedOut": null,
+              "duration": 1223,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(_login.default.usernameInput).clear();\ncy.get(_login.default.passwordInput).clear();\ncy.get(_login.default.loginBtn).click();\ncy.get('.text-small').should('be.visible');\ncy.url().should('include', '/');",
+              "err": {},
+              "uuid": "c3e4884d-1942-4213-a83e-cb9e703b4d8a",
+              "parentUUID": "ab55a49d-eacb-490c-b3d8-e8dfd3c85db9",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ab0ae23f-da6b-4b77-819a-bc550db7b3fd",
+            "cf94e02f-a762-4b34-81e2-ad8282f50713",
+            "a988ac2a-1514-4b8d-b2ab-2cc5312d1c09",
+            "c3e4884d-1942-4213-a83e-cb9e703b4d8a"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 8031,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportPageTitle": "Cypress Inline Reporter",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
